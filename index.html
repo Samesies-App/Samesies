@@ -2,98 +2,183 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Samesies helps people discover nearby people who share their hobbies and interests."
+  >
+
   <title>Samesies | The Local Side of Shared Interests</title>
 
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 
 <body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="#top" aria-label="Samesies homepage">
+        Samesies
+      </a>
 
-  <header>
-    <div class="logo">Samesies</div>
+      <nav class="navigation" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#safety">Safety</a>
+        <a class="sign-in-link" href="#">Sign In</a>
 
-    <nav>
-      <a href="#about">About</a>
-      <a href="#safety">Safety</a>
-      <a href="#">Sign In</a>
-    </nav>
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          type="button"
+          aria-label="Switch to dark mode"
+          aria-pressed="false"
+        >
+          <span class="theme-icon" aria-hidden="true">☾</span>
+          <span class="theme-label">Dark</span>
+        </button>
+      </nav>
+    </div>
   </header>
 
-  <main>
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-content">
+        <p class="badge">SAFE • RELIABLE • FUN</p>
 
-    <section class="hero">
+        <h1 id="hero-heading">Samesies</h1>
 
-      <div class="badge">
-        SAFE • RELIABLE • FUN
+        <p class="tagline">
+          The local side of shared interests.
+        </p>
+
+        <p class="hero-text">
+          Find nearby people who share your hobbies, passions,
+          interests, and wonderfully specific obsessions.
+        </p>
+
+        <div class="button-group">
+          <a class="button primary-button" href="#discover">
+            Find Your People
+          </a>
+
+          <a class="button secondary-button" href="#about">
+            Learn More
+          </a>
+        </div>
       </div>
-
-      <h1>Samesies</h1>
-
-      <h2>The local side of shared interests.</h2>
-
-      <p class="hero-text">
-        Find nearby people who share your hobbies,
-        passions, interests, and wonderfully specific obsessions.
-      </p>
-
-      <div class="button-group">
-        <button class="primary-btn">Find Your People</button>
-        <button class="secondary-btn">Learn More</button>
-      </div>
-
     </section>
 
-    <section class="examples">
-
-      <div class="card">
-        <h3>⭐ Astronomy</h3>
-        <p>Samesies! We found 12 people nearby.</p>
+    <section
+      class="examples"
+      id="discover"
+      aria-labelledby="discover-heading"
+    >
+      <div class="section-heading">
+        <p class="eyebrow">People nearby get it</p>
+        <h2 id="discover-heading">Find your local Samesies</h2>
       </div>
 
-      <div class="card">
-        <h3>🎮 Retro Gaming</h3>
-        <p>You and RetroCollector92 have 3 Samesies.</p>
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">⭐</div>
+
+          <div>
+            <h3>Astronomy</h3>
+            <p>Samesies! We found 12 people nearby.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🎮</div>
+
+          <div>
+            <h3>Retro Gaming</h3>
+            <p>You and RetroCollector92 have 3 Samesies.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">📷</div>
+
+          <div>
+            <h3>Photography</h3>
+            <p>Turns out you’re not the only one.</p>
+          </div>
+        </article>
       </div>
+    </section>
 
-      <div class="card">
-        <h3>📷 Photography</h3>
-        <p>Turns out you're not the only one.</p>
+    <section class="content-section" id="about">
+      <div class="content-box">
+        <p class="eyebrow">The idea</p>
+        <h2>Why Samesies?</h2>
+
+        <p>
+          It’s easy to find thousands of people online who share an
+          interest. It’s surprisingly difficult to find the handful of
+          people nearby who share that same interest and might actually
+          want to do it together.
+        </p>
       </div>
-
     </section>
 
-    <section id="about" class="section">
+    <section class="content-section safety-section" id="safety">
+      <div class="content-box">
+        <p class="eyebrow">Privacy by default</p>
+        <h2>Safety First</h2>
 
-      <h2>Why Samesies?</h2>
+        <ul class="safety-list">
+          <li>
+            <span aria-hidden="true">✓</span>
+            Approximate locations only
+          </li>
 
-      <p>
-        It's easy to find thousands of people online who share an interest.
-        It's surprisingly difficult to find the handful of people nearby who
-        share that same interest and might actually want to do it together.
-      </p>
+          <li>
+            <span aria-hidden="true">✓</span>
+            No public phone numbers
+          </li>
 
+          <li>
+            <span aria-hidden="true">✓</span>
+            No continuous location tracking
+          </li>
+
+          <li>
+            <span aria-hidden="true">✓</span>
+            Public-location-first meetups
+          </li>
+
+          <li>
+            <span aria-hidden="true">✓</span>
+            Built-in block and reporting tools
+          </li>
+        </ul>
+      </div>
     </section>
 
-    <section id="safety" class="section">
+    <section class="final-cta">
+      <div class="final-cta-content">
+        <p class="eyebrow">Ready to do the thing?</p>
+        <h2>Find people who are into it too.</h2>
 
-      <h2>Safety First</h2>
-
-      <ul>
-        <li>Approximate locations only</li>
-        <li>No public phone numbers</li>
-        <li>No location tracking</li>
-        <li>Public-location-first meetups</li>
-        <li>Built-in reporting tools</li>
-      </ul>
-
+        <a class="button primary-button" href="#discover">
+          Find Your People
+        </a>
+      </div>
     </section>
-
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <p>© 2026 Samesies</p>
-  </footer>
 
+    <p class="footer-tagline">
+      The local side of shared interests.
+    </p>
+  </footer>
 </body>
 </html>
