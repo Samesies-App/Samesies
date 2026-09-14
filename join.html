@@ -1,53 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="dark">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-
-<title>Join Samesies</title>
-
-<link rel="stylesheet" href="style.css">
-script.jsscript>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Join the Samesies early-access waitlist.">
+  <meta name="theme-color" content="#0b1224">
+  <title>Join the Samesies Waitlist</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-<body>
+<body class="join-page">
+  <a class="skip-link" href="#main-content">Skip to form</a>
 
-<header>
-  <div class="logo">Samesies</div>
-</header>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="wordmark" href="index.html" aria-label="Samesies home">Samesies</a>
+      <nav class="site-nav" aria-label="Waitlist navigation">
+        <a href="index.html">Home</a>
+        <button class="theme-toggle" type="button" aria-label="Switch color theme">
+          <span class="theme-icon" aria-hidden="true">☀</span>
+          <span class="theme-text">Light</span>
+        </button>
+      </nav>
+    </div>
+  </header>
 
-<section class="content-section">
+  <main id="main-content" class="join-main">
+    <section class="join-intro" aria-labelledby="join-title">
+      <p class="eyebrow">JOIN THE WAITLIST</p>
+      <h1 id="join-title">Turns out you're not the only one.</h1>
+      <p>Help shape the future of Samesies and be among the first people to discover local communities built around shared interests.</p>
+      <ul class="trust-list" aria-label="Waitlist promises">
+        <li>Free to join</li>
+        <li>No spam</li>
+        <li>Privacy by default</li>
+      </ul>
+    </section>
 
-<div class="content-box">
+    <section class="form-shell" aria-label="Samesies waitlist form">
+      <div class="form-toolbar">
+        <div>
+          <p class="eyebrow">EARLY ACCESS</p>
+          <h2>Join Samesies</h2>
+        </div>
+        <a class="text-link" href="https://forms.cloud.microsoft/r/SAEBwRbx3K?origin=lprLink" target="_blank" rel="noopener noreferrer">Open form in a new tab</a>
+      </div>
 
-<p class="section-label">
-JOIN THE WAITLIST
-</p>
+      <div class="form-frame-wrap">
+        <iframe
+          class="form-frame"
+          src="https://forms.cloud.microsoft/r/SAEBwRbx3K?origin=lprLink"
+          title="Join the Samesies waitlist"
+          loading="eager"
+          referrerpolicy="strict-origin-when-cross-origin">
+        </iframe>
+      </div>
 
-<h2>
-Turns out you're not the only one.
-</h2>
+      <noscript>
+        <p class="form-fallback">JavaScript is not required for the form, but if the embedded form does not appear, <a href="https://forms.cloud.microsoft/r/SAEBwRbx3K?origin=lprLink">open the Samesies waitlist form</a>.</p>
+      </noscript>
+      <p class="form-fallback">If the embedded form does not load correctly, use the button below.</p>
+      <a class="button button-primary mobile-form-button" href="https://forms.cloud.microsoft/r/SAEBwRbx3K?origin=lprLink" target="_blank" rel="noopener noreferrer">Open the Waitlist Form</a>
+    </section>
+  </main>
 
-<p class="hero-text">
-
-Help shape the future of Samesies and be among
-the first people to discover local communities
-built around shared interests.
-
-</p>
-
-<iframe
-src="https://forms.cloud.microsoft/r/SAEBwRbx3K?origin=lprLink"
-width="100%"
-height="1200"
-frameborder="0">
-
-</iframe>
-
-</div>
-
-</section>
-
+  <footer class="site-footer compact-footer">
+    <a class="footer-wordmark" href="index.html">Samesies</a>
+    <p>The local side of shared interests.</p>
+    <p class="copyright">© <span data-current-year></span> Samesies</p>
+  </footer>
 </body>
 </html>
