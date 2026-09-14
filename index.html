@@ -1,184 +1,283 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
+
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <meta
-    name="description"
-    content="Samesies helps people discover nearby people who share their hobbies and interests."
-  >
-
-  <title>Samesies | The Local Side of Shared Interests</title>
+  <title>Samesies | The local side of shared interests</title>
 
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="logo" href="#top" aria-label="Samesies homepage">
-        Samesies
-      </a>
 
-      <nav class="navigation" aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#safety">Safety</a>
-        <a class="sign-in-link" href="#">Sign In</a>
+<header>
 
-        <button
-          class="theme-toggle"
-          id="theme-toggle"
-          type="button"
-          aria-label="Switch to dark mode"
-          aria-pressed="false"
-        >
-          <span class="theme-icon" aria-hidden="true">☾</span>
-          <span class="theme-label">Dark</span>
-        </button>
-      </nav>
+  <div class="logo">
+    Samesies
+  </div>
+
+  <nav>
+
+    <a href="#about">About</a>
+    <a href="#safety">Safety</a>
+    <a href="join.html">Join Beta</a>
+
+    <button class="theme-toggle">
+      🌙
+    </button>
+
+  </nav>
+
+</header>
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="badge">
+      SAFE • RELIABLE • FUN
     </div>
-  </header>
 
-  <main id="top">
-    <section class="hero" aria-labelledby="hero-heading">
-      <div class="hero-content">
-        <p class="badge">SAFE • RELIABLE • FUN</p>
+    <h1>Samesies</h1>
 
-        <h1 id="hero-heading">Samesies</h1>
-
-        <p class="tagline">
-          The local side of shared interests.
-        </p>
-
-        <p class="hero-text">
-          Find nearby people who share your hobbies, passions,
-          interests, and wonderfully specific obsessions.
-        </p>
-
-        <div class="button-group">
-          <a class="button primary-button" href="#discover">
-            Find Your People
-          </a>
-
-          <a class="button secondary-button" href="#about">
-            Learn More
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section
-      class="examples"
-      id="discover"
-      aria-labelledby="discover-heading"
-    >
-      <div class="section-heading">
-        <p class="eyebrow">People nearby get it</p>
-        <h2 id="discover-heading">Find your local Samesies</h2>
-      </div>
-
-      <div class="card-grid">
-        <article class="card">
-          <div class="card-icon" aria-hidden="true">⭐</div>
-
-          <div>
-            <h3>Astronomy</h3>
-            <p>Samesies! We found 12 people nearby.</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-icon" aria-hidden="true">🎮</div>
-
-          <div>
-            <h3>Retro Gaming</h3>
-            <p>You and RetroCollector92 have 3 Samesies.</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-icon" aria-hidden="true">📷</div>
-
-          <div>
-            <h3>Photography</h3>
-            <p>Turns out you’re not the only one.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="content-section" id="about">
-      <div class="content-box">
-        <p class="eyebrow">The idea</p>
-        <h2>Why Samesies?</h2>
-
-        <p>
-          It’s easy to find thousands of people online who share an
-          interest. It’s surprisingly difficult to find the handful of
-          people nearby who share that same interest and might actually
-          want to do it together.
-        </p>
-      </div>
-    </section>
-
-    <section class="content-section safety-section" id="safety">
-      <div class="content-box">
-        <p class="eyebrow">Privacy by default</p>
-        <h2>Safety First</h2>
-
-        <ul class="safety-list">
-          <li>
-            <span aria-hidden="true">✓</span>
-            Approximate locations only
-          </li>
-
-          <li>
-            <span aria-hidden="true">✓</span>
-            No public phone numbers
-          </li>
-
-          <li>
-            <span aria-hidden="true">✓</span>
-            No continuous location tracking
-          </li>
-
-          <li>
-            <span aria-hidden="true">✓</span>
-            Public-location-first meetups
-          </li>
-
-          <li>
-            <span aria-hidden="true">✓</span>
-            Built-in block and reporting tools
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="final-cta">
-      <div class="final-cta-content">
-        <p class="eyebrow">Ready to do the thing?</p>
-        <h2>Find people who are into it too.</h2>
-
-        <a class="button primary-button" href="#discover">
-          Find Your People
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <p>© 2026 Samesies</p>
-
-    <p class="footer-tagline">
+    <p class="tagline">
       The local side of shared interests.
     </p>
-  </footer>
+
+    <p class="hero-text">
+
+      Find nearby people who share your
+      hobbies, interests, passions, and
+      wonderfully specific obsessions.
+
+    </p>
+
+    <div class="button-group">
+
+      <a href="join.html"
+         class="button primary-button">
+
+         Find Your People
+
+      </a>
+
+      <a href="#about"
+         class="button secondary-button">
+
+         Learn More
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section
+id="about"
+class="content-section">
+
+<div class="content-box">
+
+<p class="section-label">
+THE IDEA
+</p>
+
+<h2>
+Why Samesies?
+</h2>
+
+<p>
+
+The internet makes it easy to find
+people who share your interests.
+
+</p>
+
+<p>
+
+Samesies helps you find the people
+nearby who actually want to do them
+with you.
+
+</p>
+
+</div>
+
+</section>
+
+<section
+id="safety"
+class="content-section">
+
+<div class="content-box">
+
+<p class="section-label">
+PRIVACY BY DEFAULT
+</p>
+
+<h2>
+Safety First
+</h2>
+
+<p class="section-intro">
+
+Designed to help people connect,
+not overshare.
+
+</p>
+
+<div class="safety-grid">
+
+<div class="safety-card">
+
+<h3>✅ Privacy by default</h3>
+
+<p>
+Your information stays yours.
+</p>
+
+</div>
+
+<div class="safety-card">
+
+<h3>✅ Public-first meetups</h3>
+
+<p>
+Start in familiar public places.
+</p>
+
+</div>
+
+<div class="safety-card">
+
+<h3>✅ You're always in control</h3>
+
+<p>
+Block, report, or disconnect anytime.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="examples">
+
+<div class="section-heading">
+
+<p class="section-label">
+PEOPLE NEARBY GET IT
+</p>
+
+<h2>
+Find Your Local Samesies
+</h2>
+
+</div>
+
+<div class="card-grid">
+
+<div class="card">
+
+<div class="card-icon">⭐</div>
+
+<div>
+
+<h3>Astronomy</h3>
+
+<p>
+Samesies! We found
+12 people nearby.
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="card-icon">🎮</div>
+
+<div>
+
+<h3>Retro Gaming</h3>
+
+<p>
+You and RetroCollector92
+have 3 Samesies in common.
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="card-icon">📷</div>
+
+<div>
+
+<h3>Photography</h3>
+
+<p>
+Turns out you're not
+the only one.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="final-cta">
+
+<h2>
+Turns out you're not
+the only one.
+</h2>
+
+<p>
+
+Open the site.
+Find your people.
+Go do the thing.
+
+</p>
+
+<a href="join.html"
+   class="button primary-button">
+
+   Join the Beta
+
+</a>
+
+</section>
+
+<footer>
+
+<div class="logo">
+Samesies
+</div>
+
+<p class="footer-tagline">
+
+The local side of shared interests.
+
+</p>
+
+</footer>
+
 </body>
+
 </html>
