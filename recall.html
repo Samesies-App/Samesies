@@ -1,128 +1,299 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Recall Vault</title>
 
 <style>
+
 body{
-    font-family:Segoe UI,sans-serif;
-    background:#0f1020;
-    color:white;
     margin:0;
+    font-family:Verdana,sans-serif;
+    color:white;
+    background:
+    linear-gradient(180deg,#050510,#151530);
+}
+
+#stars{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-image:
+    radial-gradient(white 1px, transparent 1px);
+    background-size:30px 30px;
+    opacity:.3;
+    z-index:-1;
 }
 
 header{
     text-align:center;
-    padding:60px 20px;
-    background:linear-gradient(135deg,#5a00ff,#ff4daa);
+    padding:30px;
+    background:
+    linear-gradient(90deg,
+    #ff00aa,
+    #00e5ff,
+    #7dff00);
+
+    color:black;
+
+    border-bottom:5px solid white;
 }
 
 h1{
-    font-size:3rem;
+    font-size:4rem;
     margin:0;
+    text-shadow:
+    3px 3px white;
 }
 
-.tagline{
-    font-size:1.2rem;
-    opacity:.9;
-}
-
-.container{
-    max-width:1000px;
-    margin:auto;
-    padding:30px;
+.sub{
+    font-weight:bold;
 }
 
 .search-box{
-    background:#1b1f38;
-    border-radius:15px;
-    padding:20px;
-    margin-top:-40px;
-    box-shadow:0 10px 30px rgba(0,0,0,.4);
+
+    width:80%;
+    max-width:900px;
+
+    margin:auto;
+    margin-top:30px;
+
+    background:#111133;
+
+    padding:25px;
+
+    border:3px solid cyan;
+
+    box-shadow:
+    0 0 20px cyan;
+
 }
 
 textarea{
+
     width:100%;
     height:120px;
+
+    font-size:1.1rem;
+
     border:none;
-    border-radius:10px;
+
     padding:15px;
-    font-size:1rem;
-    resize:none;
+
+    background:black;
+    color:lime;
+
 }
 
 button{
-    margin-top:15px;
-    background:#ff4daa;
-    color:white;
+
+    background:
+    linear-gradient(
+    90deg,
+    #ff00aa,
+    #ffcc00);
+
     border:none;
-    padding:12px 22px;
-    border-radius:10px;
+
+    padding:15px 30px;
+
+    margin-top:15px;
+
     cursor:pointer;
+
     font-weight:bold;
 }
 
 button:hover{
-    opacity:.9;
+    transform:scale(1.05);
+}
+
+.categories{
+
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+
+    margin-top:20px;
+
+}
+
+.category{
+
+    background:#242452;
+
+    border:2px solid cyan;
+
+    padding:10px;
+
+    cursor:pointer;
+
+}
+
+.category:hover{
+    background:#4444aa;
 }
 
 .results{
-    margin-top:30px;
+
+    max-width:1100px;
+
+    margin:auto;
+
+    padding:30px;
 }
 
 .card{
-    background:#1b1f38;
-    border-radius:15px;
+
+    background:#111133;
+
+    border-left:8px solid #00ffff;
+
     padding:20px;
-    margin-bottom:15px;
+
+    margin-bottom:20px;
+
+    box-shadow:
+    0 0 12px #00ffff55;
+
 }
 
-.card h3{
-    margin-top:0;
-    color:#4de8ff;
+.card h2{
+    color:#00ffff;
 }
 
 .match{
-    color:#65ff9d;
+    color:lime;
     font-weight:bold;
 }
 
+.status{
+
+    display:inline-block;
+
+    background:#222;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+}
+
+.available{
+    background:green;
+}
+
+.discontinued{
+    background:red;
+}
+
+.memory-wall{
+
+    max-width:1100px;
+
+    margin:auto;
+    padding:20px;
+}
+
+.memory-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(200px,1fr));
+
+    gap:15px;
+
+}
+
+.memory{
+
+    background:#1c1c4d;
+
+    padding:15px;
+
+    border:
+    2px solid #ff00aa;
+}
+
 footer{
+
     text-align:center;
-    padding:30px;
+
+    padding:40px;
+
     color:#999;
 }
+
 </style>
+
 </head>
 
 <body>
 
+<div id="stars"></div>
+
 <header>
-    <h1>Recall Vault</h1>
-    <p class="tagline">Describe it. Rediscover it.</p>
+
+<h1>RECALL VAULT</h1>
+
+<div class="sub">
+Describe It. Rediscover It.
+</div>
+
 </header>
 
-<div class="container">
+<div class="search-box">
 
-    <div class="search-box">
-        <h2>What do you remember?</h2>
+<h2>What Do You Remember?</h2>
 
-        <textarea id="query"
-        placeholder="Example: purple drink with a twist cap from the late 90s"></textarea>
+<textarea id="query"
+placeholder="A purple drink from the 90s with a weird bottle..."></textarea>
 
-        <br>
+<button onclick="searchMemory()">
+SEARCH MY MEMORY
+</button>
 
-        <button onclick="searchMemory()">Search My Memory</button>
-    </div>
+<div class="categories">
 
-    <div class="results" id="results"></div>
+<div class="category">🧸 Toys</div>
+<div class="category">🥤 Snacks</div>
+<div class="category">📺 TV Shows</div>
+<div class="category">🎮 Games</div>
+<div class="category">💾 Electronics</div>
+<div class="category">🎵 Music</div>
+
+</div>
+
+</div>
+
+<div class="results" id="results">
+
+</div>
+
+<div class="memory-wall">
+
+<h2>Trending Memories</h2>
+
+<div class="memory-grid">
+
+<div class="memory">Furby</div>
+<div class="memory">Orbitz Drink</div>
+<div class="memory">Moon Shoes</div>
+<div class="memory">Skip-It</div>
+<div class="memory">Game Boy Pocket</div>
+<div class="memory">Tamagotchi</div>
+
+</div>
 
 </div>
 
 <footer>
-    Recall Vault Prototype • Nostalgia Search Engine
+
+Recall Vault © 1999*
+<br>
+*Actually 2026
+
 </footer>
 
 <script>
@@ -130,117 +301,122 @@ footer{
 const database = [
 
 {
-    name:"Orbitz",
-    category:"Drink",
-    match:["purple","drink","90s","twist","bottle"],
-    year:"1997",
-    status:"Discontinued",
-    description:"Fruit drink famous for floating gel balls.",
-    availability:"Collector markets and online auctions."
+name:"Orbitz",
+type:"Drink",
+status:"Discontinued",
+match:["purple","drink","bottle","90s"],
+description:
+"Fruit drink with floating gel balls."
 },
 
 {
-    name:"Furby",
-    category:"Toy",
-    match:["toy","electronic","pet","90s","furry"],
-    year:"1998",
-    status:"Reissued",
-    description:"Interactive electronic pet toy.",
-    availability:"Modern versions available in stores."
+name:"Furby",
+type:"Toy",
+status:"Available",
+match:["toy","pet","electronic","furry"],
+description:
+"Interactive robot pet."
 },
 
 {
-    name:"Game Boy Pocket",
-    category:"Game System",
-    match:["handheld","game","gray","nintendo","90s"],
-    year:"1996",
-    status:"Discontinued",
-    description:"Portable Nintendo gaming system.",
-    availability:"Retro gaming stores and eBay."
-},
-
-{
-    name:"Moon Shoes",
-    category:"Toy",
-    match:["moon","jumping","shoes","toy"],
-    year:"1990s",
-    status:"Still Available",
-    description:"Mini trampoline shoes for kids.",
-    availability:"Available from several retailers."
+name:"Game Boy Pocket",
+type:"Gaming",
+status:"Discontinued",
+match:["game","handheld","nintendo"],
+description:
+"Portable gaming system from Nintendo."
 }
 
 ];
 
 function searchMemory(){
 
-    const query =
-    document.getElementById("query")
-    .value.toLowerCase();
+let query =
+document.getElementById("query")
+.value.toLowerCase();
 
-    let html = "";
+let html = "";
 
-    database.forEach(item=>{
+database.forEach(item=>{
 
-        let score = 0;
+let score = 0;
 
-        item.match.forEach(word=>{
-            if(query.includes(word)){
-                score += 20;
-            }
-        });
+item.match.forEach(word=>{
 
-        if(score > 0){
-            html += `
-            <div class="card">
+if(query.includes(word))
+score += 25;
 
-                <h3>${item.name}</h3>
+});
 
-                <p class="match">
-                Match Confidence: ${Math.min(score,95)}%
-                </p>
+if(score > 0){
 
-                <p>
-                <strong>Category:</strong>
-                ${item.category}
-                </p>
+html += `
 
-                <p>
-                <strong>Released:</strong>
-                ${item.year}
-                </p>
+<div class="card">
 
-                <p>
-                <strong>Status:</strong>
-                ${item.status}
-                </p>
+<h2>${item.name}</h2>
 
-                <p>
-                ${item.description}
-                </p>
+<div class="match">
+Match Confidence:
+${Math.min(score,100)}%
+</div>
 
-                <p>
-                <strong>Where To Find It:</strong>
-                ${item.availability}
-                </p>
+<p>
+${item.description}
+</p>
 
-            </div>
-            `;
-        }
+<p>
+Type:
+${item.type}
+</p>
 
-    });
+<span class="status
+${item.status==="Available" ? "available" : "discontinued"}">
 
-    if(html === ""){
-        html =
-        `<div class="card">
-            <h3>No Good Match Found</h3>
-            <p>
-            Try adding colors, years, sounds, package shapes,
-            slogans, or anything else you remember.
-            </p>
-        </div>`;
-    }
+${item.status}
 
-    document.getElementById("results").innerHTML = html;
+</span>
+
+</div>
+
+`;
+
+}
+
+});
+
+if(html===""){
+
+html=`
+
+<div class="card">
+
+<h2>No Match Yet</h2>
+
+<p>
+
+Try adding:
+
+<ul>
+
+<li>Color</li>
+<li>Year</li>
+<li>Package shape</li>
+<li>Theme song</li>
+<li>Store you bought it from</li>
+
+</ul>
+
+</p>
+
+</div>
+
+`;
+
+}
+
+document.getElementById("results").innerHTML=html;
+
 }
 
 </script>
