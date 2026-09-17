@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recall Vault</title>
+
+<style>
+body{
+    font-family:Segoe UI,sans-serif;
+    background:#0f1020;
+    color:white;
+    margin:0;
+}
+
+header{
+    text-align:center;
+    padding:60px 20px;
+    background:linear-gradient(135deg,#5a00ff,#ff4daa);
+}
+
+h1{
+    font-size:3rem;
+    margin:0;
+}
+
+.tagline{
+    font-size:1.2rem;
+    opacity:.9;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:30px;
+}
+
+.search-box{
+    background:#1b1f38;
+    border-radius:15px;
+    padding:20px;
+    margin-top:-40px;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+textarea{
+    width:100%;
+    height:120px;
+    border:none;
+    border-radius:10px;
+    padding:15px;
+    font-size:1rem;
+    resize:none;
+}
+
+button{
+    margin-top:15px;
+    background:#ff4daa;
+    color:white;
+    border:none;
+    padding:12px 22px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+button:hover{
+    opacity:.9;
+}
+
+.results{
+    margin-top:30px;
+}
+
+.card{
+    background:#1b1f38;
+    border-radius:15px;
+    padding:20px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    margin-top:0;
+    color:#4de8ff;
+}
+
+.match{
+    color:#65ff9d;
+    font-weight:bold;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#999;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Recall Vault</h1>
+    <p class="tagline">Describe it. Rediscover it.</p>
+</header>
+
+<div class="container">
+
+    <div class="search-box">
+        <h2>What do you remember?</h2>
+
+        <textarea id="query"
+        placeholder="Example: purple drink with a twist cap from the late 90s"></textarea>
+
+        <br>
+
+        <button onclick="searchMemory()">Search My Memory</button>
+    </div>
+
+    <div class="results" id="results"></div>
+
+</div>
+
+<footer>
+    Recall Vault Prototype • Nostalgia Search Engine
+</footer>
+
+<script>
+
+const database = [
+
+{
+    name:"Orbitz",
+    category:"Drink",
+    match:["purple","drink","90s","twist","bottle"],
+    year:"1997",
+    status:"Discontinued",
+    description:"Fruit drink famous for floating gel balls.",
+    availability:"Collector markets and online auctions."
+},
+
+{
+    name:"Furby",
+    category:"Toy",
+    match:["toy","electronic","pet","90s","furry"],
+    year:"1998",
+    status:"Reissued",
+    description:"Interactive electronic pet toy.",
+    availability:"Modern versions available in stores."
+},
+
+{
+    name:"Game Boy Pocket",
+    category:"Game System",
+    match:["handheld","game","gray","nintendo","90s"],
+    year:"1996",
+    status:"Discontinued",
+    description:"Portable Nintendo gaming system.",
+    availability:"Retro gaming stores and eBay."
+},
+
+{
+    name:"Moon Shoes",
+    category:"Toy",
+    match:["moon","jumping","shoes","toy"],
+    year:"1990s",
+    status:"Still Available",
+    description:"Mini trampoline shoes for kids.",
+    availability:"Available from several retailers."
+}
+
+];
+
+function searchMemory(){
+
+    const query =
+    document.getElementById("query")
+    .value.toLowerCase();
+
+    let html = "";
+
+    database.forEach(item=>{
+
+        let score = 0;
+
+        item.match.forEach(word=>{
+            if(query.includes(word)){
+                score += 20;
+            }
+        });
+
+        if(score > 0){
+            html += `
+            <div class="card">
+
+                <h3>${item.name}</h3>
+
+                <p class="match">
+                Match Confidence: ${Math.min(score,95)}%
+                </p>
+
+                <p>
+                <strong>Category:</strong>
+                ${item.category}
+                </p>
+
+                <p>
+                <strong>Released:</strong>
+                ${item.year}
+                </p>
+
+                <p>
+                <strong>Status:</strong>
+                ${item.status}
+                </p>
+
+                <p>
+                ${item.description}
+                </p>
+
+                <p>
+                <strong>Where To Find It:</strong>
+                ${item.availability}
+                </p>
+
+            </div>
+            `;
+        }
+
+    });
+
+    if(html === ""){
+        html =
+        `<div class="card">
+            <h3>No Good Match Found</h3>
+            <p>
+            Try adding colors, years, sounds, package shapes,
+            slogans, or anything else you remember.
+            </p>
+        </div>`;
+    }
+
+    document.getElementById("results").innerHTML = html;
+}
+
+</script>
+
+</body>
+</html>
